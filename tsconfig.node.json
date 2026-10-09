@@ -13,5 +13,11 @@
     "noEmit": true,
     "types": ["node"]
   },
-  "include": ["vite.config.ts", "scripts", "src/content/types.ts", "src/content/ventures"]
+  "include": [
+    "vite.config.ts",
+    "scripts",
+    "src/content/types.ts",
+    "src/content/resolve.ts",
+    "src/content/validate.ts"
+  ]
 }

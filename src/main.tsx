@@ -5,7 +5,7 @@ import './styles/global.css'
 
 if (import.meta.env.DEV) {
   void Promise.all([import('./content/validate'), import('./content/ventures')]).then(
-    ([{ validateContent }, { registered }]) => validateContent(registered),
+    ([{ validateContent }, { projectFiles }]) => validateContent(projectFiles),
   )
 }
 

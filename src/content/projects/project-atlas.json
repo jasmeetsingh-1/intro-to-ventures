@@ -1,0 +1,142 @@
+{
+  "$schema": "../project.schema.json",
+  "slug": "project-atlas",
+  "name": "Project Atlas",
+  "oneLiner": "[Placeholder] An AI tool that turns messy inputs into a clear map.",
+  "stage": "live",
+  "category": "AI tooling",
+  "startedOn": "2026-02",
+  "lastUpdated": "2026-10-06",
+  "nextMilestone": "First 100 paying users",
+  "role": "Solo founder",
+  "liveUrl": "https://example.com",
+  "links": [
+    {
+      "label": "Demo video",
+      "url": "https://example.com"
+    },
+    {
+      "label": "Launch write-up",
+      "url": "https://example.com"
+    }
+  ],
+  "problem": "[Placeholder] This paragraph will explain the problem Atlas solves and the moment I noticed it. It should be specific: who was stuck, what they tried, and why the existing tools did not help.\n\n[Placeholder] A second paragraph will explain why I was the right person to build it, and why now.",
+  "audience": "[Placeholder] Who this is for: the kind of person or team that feels this pain every week.",
+  "workflow": [
+    {
+      "title": "Drop in your inputs",
+      "detail": "[Placeholder] The user uploads or pastes whatever they have, in any shape."
+    },
+    {
+      "title": "Atlas reads everything",
+      "detail": "[Placeholder] A model pass extracts the entities and relationships that matter."
+    },
+    {
+      "title": "Review the draft map",
+      "detail": "[Placeholder] The user sees a first draft and corrects anything that looks off."
+    },
+    {
+      "title": "Refine with questions",
+      "detail": "[Placeholder] Follow-up questions in plain language reshape the map."
+    },
+    {
+      "title": "Share or export",
+      "detail": "[Placeholder] The final map exports to a link, a PDF, or a doc."
+    }
+  ],
+  "stack": ["React", "TypeScript", "Node.js", "PostgreSQL", "Claude API", "Vercel"],
+  "architectureNote": "[Placeholder] A short note on the architecture: where the model calls happen, how results are cached, and the one tradeoff worth explaining.",
+  "milestones": [
+    {
+      "label": "Problem interviews",
+      "state": "done",
+      "date": "2026-02-20"
+    },
+    {
+      "label": "Working prototype",
+      "state": "done",
+      "date": "2026-04-02"
+    },
+    {
+      "label": "Private beta",
+      "state": "done",
+      "date": "2026-06-10"
+    },
+    {
+      "label": "Public launch",
+      "state": "done",
+      "date": "2026-08-18"
+    },
+    {
+      "label": "First 100 paying users",
+      "state": "doing"
+    },
+    {
+      "label": "Team plan",
+      "state": "next"
+    }
+  ],
+  "journey": [
+    {
+      "date": "2026-02-14",
+      "kind": "decision",
+      "title": "[Placeholder] Committed to building Atlas",
+      "body": "[Placeholder] Why I picked this idea over the others on the list.\n\n[Placeholder] What I decided not to build."
+    },
+    {
+      "date": "2026-04-02",
+      "kind": "shipped",
+      "title": "[Placeholder] First working prototype",
+      "body": "[Placeholder] What the prototype could do, and what it could not do yet."
+    },
+    {
+      "date": "2026-05-21",
+      "kind": "setback",
+      "title": "[Placeholder] Rebuilt the extraction step",
+      "body": "[Placeholder] What broke, why, and what I changed.\n\n[Placeholder] What it cost in time."
+    },
+    {
+      "date": "2026-06-10",
+      "kind": "milestone",
+      "title": "[Placeholder] Private beta opened",
+      "body": "[Placeholder] How the first beta users were chosen and what I asked them to do."
+    },
+    {
+      "date": "2026-08-18",
+      "kind": "shipped",
+      "title": "[Placeholder] Public launch",
+      "body": "[Placeholder] Where it launched and the first reactions.",
+      "links": [
+        {
+          "label": "Launch post",
+          "url": "https://example.com"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "kind": "learning",
+      "title": "[Placeholder] What paying users actually want",
+      "body": "[Placeholder] The pattern I noticed in the first conversations with paying users, and how it changes the roadmap."
+    }
+  ],
+  "roadmap": [
+    "[Placeholder] Team workspaces",
+    "[Placeholder] Better export formats",
+    "[Placeholder] An integration with one popular tool"
+  ],
+  "metrics": [
+    {
+      "label": "Paying users",
+      "value": "XX"
+    },
+    {
+      "label": "Maps created",
+      "value": "X,XXX"
+    },
+    {
+      "label": "Weekly retention",
+      "value": "XX%"
+    }
+  ]
+}

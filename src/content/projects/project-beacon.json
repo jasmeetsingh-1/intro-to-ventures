@@ -1,0 +1,95 @@
+{
+  "$schema": "../project.schema.json",
+  "slug": "project-beacon",
+  "name": "Project Beacon",
+  "oneLiner": "[Placeholder] A focus tool that surfaces the one thing to do next.",
+  "stage": "beta",
+  "category": "Productivity",
+  "startedOn": "2026-05",
+  "lastUpdated": "2026-09-28",
+  "nextMilestone": "Public launch",
+  "role": "Solo founder",
+  "links": [
+    {
+      "label": "Beta sign-up",
+      "url": "https://example.com"
+    }
+  ],
+  "problem": "[Placeholder] The story of why Beacon exists: the moment the problem became obvious, and why the usual to-do apps were not enough.",
+  "audience": "[Placeholder] People who juggle many small commitments and lose track of the important one.",
+  "workflow": [
+    {
+      "title": "Connect your sources",
+      "detail": "[Placeholder] Calendar, inbox and task list are linked once."
+    },
+    {
+      "title": "Beacon ranks the work",
+      "detail": "[Placeholder] Open items are scored by urgency and effort."
+    },
+    {
+      "title": "One thing at a time",
+      "detail": "[Placeholder] The user sees a single next action, not a list."
+    },
+    {
+      "title": "Close the loop",
+      "detail": "[Placeholder] Finishing or snoozing an item updates the ranking."
+    }
+  ],
+  "stack": ["React Native", "TypeScript", "Supabase", "OpenAI API"],
+  "milestones": [
+    {
+      "label": "Idea validated",
+      "state": "done",
+      "date": "2026-05-15"
+    },
+    {
+      "label": "Prototype",
+      "state": "done",
+      "date": "2026-07-01"
+    },
+    {
+      "label": "Closed beta",
+      "state": "done",
+      "date": "2026-08-25"
+    },
+    {
+      "label": "Public launch",
+      "state": "doing"
+    },
+    {
+      "label": "Paid tier",
+      "state": "next"
+    }
+  ],
+  "journey": [
+    {
+      "date": "2026-05-12",
+      "kind": "decision",
+      "title": "[Placeholder] Started Beacon as a weekend project",
+      "body": "[Placeholder] The original scope and the one feature I refused to add."
+    },
+    {
+      "date": "2026-07-01",
+      "kind": "shipped",
+      "title": "[Placeholder] Prototype on my own phone",
+      "body": "[Placeholder] What a week of using it myself taught me."
+    },
+    {
+      "date": "2026-08-25",
+      "kind": "milestone",
+      "title": "[Placeholder] Closed beta opened",
+      "body": "[Placeholder] Who joined and what I asked them to try first."
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "learning",
+      "title": "[Placeholder] Beta users ignore the ranking",
+      "body": "[Placeholder] An unexpected finding from the beta.\n\n[Placeholder] The change I am testing because of it."
+    }
+  ],
+  "roadmap": [
+    "[Placeholder] Public launch",
+    "[Placeholder] Desktop companion",
+    "[Placeholder] Paid tier"
+  ]
+}
