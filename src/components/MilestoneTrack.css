@@ -1,0 +1,137 @@
+.track__list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.track__item {
+  position: relative;
+  display: grid;
+  gap: 2px;
+}
+
+.track__dot {
+  position: relative;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--faint);
+  background: var(--bg);
+}
+
+.track__item--done .track__dot {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.track__item--doing .track__dot {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 25%, var(--bg));
+  animation: pulse 2s ease-out infinite;
+}
+
+.track__label {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.track__item--next .track__label {
+  color: var(--muted);
+}
+
+.track__meta {
+  font-size: 11px;
+  color: var(--faint);
+}
+
+.track__item--doing .track__meta {
+  color: var(--accent);
+}
+
+.track__summary {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track__item--doing .track__dot {
+    animation: none;
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+  }
+}
+
+/* Vertical (mobile) */
+@media (max-width: 719px) {
+  .track__list {
+    gap: 18px;
+  }
+
+  .track__item {
+    grid-template-columns: 14px 1fr;
+    column-gap: 14px;
+  }
+
+  .track__dot {
+    grid-row: 1 / span 2;
+    margin-top: 4px;
+  }
+
+  .track__item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 6.5px;
+    top: 20px;
+    bottom: -16px;
+    width: 1px;
+    background: var(--line);
+  }
+
+  .track__item--done:not(:last-child)::before {
+    background: color-mix(in srgb, var(--accent) 50%, transparent);
+  }
+}
+
+/* Horizontal (desktop) */
+@media (min-width: 720px) {
+  .track__list {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .track__item {
+    align-content: start;
+    gap: 6px;
+  }
+
+  .track__dot {
+    margin-bottom: 8px;
+  }
+
+  .track__item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    top: 6.5px;
+    left: 14px;
+    right: -12px;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .track__item--done:not(:last-child)::before {
+    background: color-mix(in srgb, var(--accent) 50%, transparent);
+  }
+}

@@ -1,0 +1,29 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #0c1120; /* page */
+  --bg-raised: #131a2c; /* header band, table head */
+  --surface: #1a2238; /* cards, row hover */
+  --fg: #e9ecf6;
+  --muted: #8e98b8;
+  --faint: #5d6684;
+  --line: rgba(185, 201, 255, 0.12);
+  --accent: #b8c8ff;
+  --accent-ink: #0c1120; /* text on accent buttons */
+  --live: #9fe0bf;
+  --beta: #f3d38b;
+  --building: #b8c8ff;
+  --idea: #c9b8ff;
+  --paused: #8e98b8;
+
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --gutter: clamp(16px, 4vw, 64px);
+  --content: 1120px;
+  --reading: 68ch;
+
+  --header-h: 64px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

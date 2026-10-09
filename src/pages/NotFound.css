@@ -1,0 +1,8 @@
+.not-found {
+  padding-block: clamp(64px, 12vw, 140px);
+}
+
+.not-found__title {
+  margin-block: 16px 32px;
+  font-size: clamp(40px, 6vw, 72px);
+}

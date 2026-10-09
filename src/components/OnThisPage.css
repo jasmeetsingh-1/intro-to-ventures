@@ -1,0 +1,33 @@
+.otp__title {
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.otp ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 1px solid var(--line);
+}
+
+.otp__link {
+  display: block;
+  margin-left: -1px;
+  padding: 5px 0 5px 14px;
+  border-left: 1px solid transparent;
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    color 150ms var(--ease),
+    border-color 150ms var(--ease);
+}
+
+.otp__link:hover {
+  color: var(--fg);
+}
+
+.otp__link.is-active {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}

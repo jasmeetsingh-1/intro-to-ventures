@@ -1,0 +1,278 @@
+.journey {
+  padding-top: 28px;
+}
+
+.journey__crumb {
+  font-size: 14px;
+}
+
+.journey__crumb .text-link {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.journey__crumb .text-link:hover {
+  color: var(--accent);
+}
+
+.journey__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.journey__main {
+  max-width: var(--reading);
+  min-width: 0;
+}
+
+.rail {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .journey__layout {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 64px;
+  }
+
+  .rail {
+    display: block;
+  }
+
+  .rail__inner {
+    position: sticky;
+    top: calc(var(--header-h) + 40px);
+    display: grid;
+    gap: 28px;
+    padding-top: 56px;
+  }
+}
+
+/* Hero */
+.jhero {
+  padding-block: clamp(32px, 6vw, 64px) 40px;
+}
+
+.jhero__name {
+  margin-top: 18px;
+  font-size: clamp(48px, 7vw, 92px);
+  font-weight: 500;
+  overflow-wrap: break-word;
+}
+
+.jhero__oneliner {
+  margin-top: 14px;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.45;
+  color: var(--accent);
+}
+
+.jhero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 0;
+  margin-top: 24px;
+  font-size: 11px;
+}
+
+.jhero__facts div {
+  display: flex;
+  gap: 6px;
+}
+
+.jhero__facts div:not(:last-child)::after {
+  content: '·';
+  margin-inline: 12px;
+  color: var(--faint);
+}
+
+.jhero__facts dt {
+  color: var(--faint);
+}
+
+.jhero__facts dd {
+  color: var(--fg);
+}
+
+.jhero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 28px;
+  font-size: 15px;
+}
+
+/* Metrics */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0;
+  margin: 0 0 8px;
+  border-block: 1px solid var(--line);
+}
+
+.metrics__item {
+  padding: 20px 20px 20px 0;
+}
+
+.metrics__item + .metrics__item {
+  padding-left: 20px;
+  border-left: 1px solid var(--line);
+}
+
+.metrics dt {
+  font-size: 11px;
+}
+
+.metrics dd {
+  margin-top: 6px;
+  font-size: clamp(36px, 4vw, 48px);
+  color: var(--fg);
+}
+
+@media (max-width: 480px) {
+  .metrics__item + .metrics__item {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+}
+
+/* Sections */
+.jsection {
+  padding-top: clamp(40px, 6vw, 64px);
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+.jsection__title {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.prose p + p {
+  margin-top: 1em;
+}
+
+.prose {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.audience {
+  margin-top: 24px;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent);
+}
+
+.audience .mono-label {
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stack li {
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg);
+}
+
+.hood__note {
+  margin-top: 20px;
+  color: var(--muted);
+}
+
+.roadmap {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roadmap li {
+  position: relative;
+  padding: 12px 0 12px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.roadmap li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* Pager */
+.pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: clamp(56px, 8vw, 88px);
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.pager__link {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  margin: -12px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 150ms var(--ease);
+}
+
+.pager__link:hover {
+  background: var(--surface);
+}
+
+.pager__link--next {
+  text-align: right;
+}
+
+.pager__name {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.1;
+}
+
+.pager__link:hover .pager__name {
+  color: var(--accent);
+}
+
+/* Rail facts */
+.rail__facts {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.rail__facts dt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.rail__facts dd {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}

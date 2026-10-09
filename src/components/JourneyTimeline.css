@@ -1,0 +1,102 @@
+.timeline__month + .timeline__month {
+  margin-top: 8px;
+}
+
+.timeline__month-label {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 2;
+  padding-block: 10px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+}
+
+.timeline__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entry {
+  position: relative;
+  padding: 24px 0 28px 24px;
+  border-left: 1px solid var(--line);
+  margin-left: 4px;
+}
+
+.entry::before {
+  content: '';
+  position: absolute;
+  left: -4.5px;
+  top: 30px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+}
+
+.entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+
+.entry__head time {
+  font-size: 11px;
+}
+
+.kind {
+  --c: var(--muted);
+  padding: 1px 8px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  color: var(--c);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.kind--shipped {
+  --c: var(--live);
+}
+.kind--decision {
+  --c: var(--accent);
+}
+.kind--learning {
+  --c: var(--idea);
+}
+.kind--milestone {
+  --c: var(--beta);
+}
+.kind--setback {
+  --c: #f0a7a0;
+}
+
+.entry__title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.entry__p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.entry__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.timeline__more {
+  margin-top: 16px;
+}

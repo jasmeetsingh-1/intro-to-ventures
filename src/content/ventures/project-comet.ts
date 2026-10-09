@@ -1,0 +1,71 @@
+import type { Venture } from '../types'
+
+// Placeholder venture: every text field below is dummy copy.
+export const projectComet: Venture = {
+  slug: 'project-comet',
+  name: 'Project Comet',
+  oneLiner: '[Placeholder] A consumer app for sharing small moments with close friends.',
+  stage: 'building',
+  category: 'Consumer',
+  startedOn: '2026-08',
+  lastUpdated: '2026-10-02',
+  nextMilestone: 'Private beta',
+  role: 'Co-founder & CTO',
+  problem:
+    '[Placeholder] Why Comet exists: what feels broken about sharing with close friends today.\n\n[Placeholder] The bet we are making about how people want to share.',
+  workflow: [
+    {
+      title: 'Capture a moment',
+      detail: '[Placeholder] One tap to capture a photo, a note, or a voice clip.',
+    },
+    {
+      title: 'Pick your circle',
+      detail: '[Placeholder] Choose the small group who should see it.',
+    },
+    {
+      title: 'It fades by design',
+      detail: '[Placeholder] Moments disappear after a set time unless saved.',
+    },
+    {
+      title: 'Look back together',
+      detail: '[Placeholder] Saved moments become a shared, private album.',
+    },
+  ],
+  stack: ['Swift', 'SwiftUI', 'Firebase', 'Cloud Functions'],
+  architectureNote:
+    '[Placeholder] A note on how expiry works and why it runs on the server, not on the device.',
+  milestones: [
+    { label: 'Co-founder aligned', state: 'done', date: '2026-08-05' },
+    { label: 'Design prototype', state: 'done', date: '2026-09-01' },
+    { label: 'Core app build', state: 'doing' },
+    { label: 'Private beta', state: 'next' },
+    { label: 'App Store launch', state: 'next' },
+  ],
+  journey: [
+    {
+      date: '2026-08-05',
+      kind: 'decision',
+      title: '[Placeholder] Teamed up with a co-founder',
+      body: '[Placeholder] How we met and how we split the work.',
+    },
+    {
+      date: '2026-09-01',
+      kind: 'milestone',
+      title: '[Placeholder] Clickable design prototype',
+      body: '[Placeholder] What we tested with the prototype and what changed.',
+    },
+    {
+      date: '2026-09-19',
+      kind: 'setback',
+      title: '[Placeholder] Dropped the Android version for now',
+      body: '[Placeholder] Why we narrowed to one platform.',
+    },
+    {
+      date: '2026-10-02',
+      kind: 'shipped',
+      title: '[Placeholder] First internal build',
+      body: '[Placeholder] The first build running on our own phones.',
+    },
+  ],
+  roadmap: ['[Placeholder] Finish the core loop', '[Placeholder] Invite the first beta circles'],
+}

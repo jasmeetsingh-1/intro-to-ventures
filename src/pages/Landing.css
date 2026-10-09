@@ -1,0 +1,94 @@
+.hero {
+  padding-block: clamp(40px, 7vw, 88px) clamp(48px, 7vw, 80px);
+}
+
+.hero__title {
+  margin-top: 18px;
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: 0.95;
+  overflow-wrap: break-word;
+}
+
+.hero__intro {
+  max-width: var(--reading);
+  margin-top: clamp(20px, 3vw, 32px);
+  font-size: clamp(17px, 1.6vw, 19px);
+  color: var(--muted);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: 28px;
+}
+
+.hero__principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 0;
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hero__principles li:not(:last-child)::after {
+  content: '/';
+  margin-inline: 14px;
+  color: var(--faint);
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 0;
+  margin-top: 36px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.hero__facts li:not(:last-child)::after {
+  content: '·';
+  margin-inline: 14px;
+  color: var(--faint);
+}
+
+.landing__section-label {
+  margin-bottom: 16px;
+  font-size: 11px;
+}
+
+.how {
+  margin-top: clamp(64px, 9vw, 112px);
+}
+
+.how__title {
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+.how__body {
+  max-width: var(--reading);
+  margin-top: 16px;
+  color: var(--muted);
+}
+
+.how__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .hero__actions .btn-primary {
+    width: 100%;
+  }
+}
