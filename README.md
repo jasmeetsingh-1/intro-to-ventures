@@ -30,6 +30,8 @@ Copy `.env.example` to `.env.local` for local work, and set the variable in Verc
 2. Set `"slug"` to the file name without `.json` (`"my-new-thing"`). It becomes the URL `/v/my-new-thing`; **never change it once published**, because the portfolio links to it.
 3. Edit the content. That's it: every `.json` file in the folder is picked up automatically.
 
+**Writing a file with Claude:** paste [`docs/project-json-prompt.md`](docs/project-json-prompt.md) into a Claude chat, add your notes at the bottom, and it returns a ready-to-save JSON file. It works for updates too.
+
 Keep the `"$schema"` line at the top: editors like VS Code then autocomplete fields and underline mistakes, using `src/content/project.schema.json`.
 
 Required: `slug, name, oneLiner, stage, category, startedOn, problem, workflow, stack, milestones, journey`. Optional fields (`lastUpdated`, `nextMilestone`, `role`, `liveUrl`, `links`, `audience`, `architectureNote`, `roadmap`, `metrics`) can be left out; their sections simply don't render. Only put real numbers in `metrics`.
