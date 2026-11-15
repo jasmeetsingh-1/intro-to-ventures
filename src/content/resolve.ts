@@ -3,7 +3,7 @@ import type { Venture } from './types'
 
 /** One JSON file from src/content/projects/, before it is checked. */
 export interface ProjectFile {
-  file: string // e.g. "project-atlas.json"
+  file: string // e.g. "healthos.json"
   data: unknown
 }
 

@@ -14,7 +14,7 @@ npm run preview      # serve dist/ locally
 npm run typecheck && npm run lint
 ```
 
-Deploy to Vercel as a static site (framework preset: Vite, output: `dist`). `vercel.json` rewrites every path to `/index.html`, so deep links like `/v/project-atlas` work on refresh, and serves `/ventures.json` with a CORS header.
+Deploy to Vercel as a static site (framework preset: Vite, output: `dist`). `vercel.json` rewrites every path to `/index.html`, so deep links like `/v/dhabe-da-radio` work on refresh, and serves `/ventures.json` with a CORS header.
 
 ### Environment
 
@@ -26,7 +26,7 @@ Copy `.env.example` to `.env.local` for local work, and set the variable in Verc
 
 ## How to add a project
 
-1. Copy a file in `src/content/projects/`, e.g. `project-comet.json` → `my-new-thing.json`.
+1. Copy a file in `src/content/projects/`, e.g. `healthos.json` → `my-new-thing.json`.
 2. Set `"slug"` to the file name without `.json` (`"my-new-thing"`). It becomes the URL `/v/my-new-thing`; **never change it once published**, because the portfolio links to it.
 3. Edit the content. That's it: every `.json` file in the folder is picked up automatically.
 

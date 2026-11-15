@@ -16,8 +16,9 @@ const countStage = (s: string) => ventures.filter((v) => v.stage === s).length
 
 const facts = [
   `${ventures.length} ${ventures.length === 1 ? 'venture' : 'ventures'}`,
-  `${countStage('live')} live`,
-  `${countStage('beta')} in beta`,
+  // Zero counts are left out rather than shown as "0 live".
+  countStage('live') > 0 && `${countStage('live')} live`,
+  countStage('beta') > 0 && `${countStage('beta')} in beta`,
   earliestStart && `Building since ${formatMonth(earliestStart)}`,
 ].filter(Boolean)
 
