@@ -17,7 +17,11 @@ const kindLabel: Record<JourneyKind, string> = {
 export function JourneyTimeline({ entries }: { entries: JourneyEntry[] }) {
   const [expanded, setExpanded] = useState(false)
   const listId = useId()
-  const sorted = [...entries].sort((a, b) => b.date.localeCompare(a.date))
+  // Newest first. Entries on the same day keep their order reversed, so the one written last shows first.
+  const sorted = entries
+    .map((e, i) => ({ e, i }))
+    .sort((a, b) => b.e.date.localeCompare(a.e.date) || b.i - a.i)
+    .map(({ e }) => e)
   const shown = expanded ? sorted : sorted.slice(0, VISIBLE)
   const hidden = sorted.length - shown.length
 

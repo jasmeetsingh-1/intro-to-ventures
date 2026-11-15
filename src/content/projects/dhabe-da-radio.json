@@ -1,0 +1,103 @@
+{
+  "$schema": "../project.schema.json",
+  "slug": "dhabe-da-radio",
+  "name": "Dhabe Da Radio",
+  "oneLiner": "A one-page radio that plays old Punjabi songs inside an illustrated GT Road dhaba at night.",
+  "stage": "building",
+  "category": "Consumer",
+  "startedOn": "2026-11",
+  "lastUpdated": "2026-11-15",
+  "nextMilestone": "Swap in my own playlists",
+  "liveUrl": "https://dhabe-da-radio.example.com",
+  "links": [
+    { "label": "Source code", "url": "https://github.com/jasmeetsingh-1/dhabe-da-radio" },
+    { "label": "Demo video", "url": "https://example.com/dhabe-da-radio-demo" }
+  ],
+  "problem": "Deluxe Salon Music (deluxesalonmusic.in) went viral on Instagram, and it gave me an idea: what would the same thing feel like in Punjabi?\n\nSalons aren't really part of the culture in Punjab the way they are in that site, so I picked the place that is: a roadside dhaba on the GT Road at night, with old Punjabi songs from the 90s and 2000s playing in the background. You open the page, press play, and you're there. No sign-up.\n\nI built the whole thing in a single day.",
+  "workflow": [
+    {
+      "title": "Open the page",
+      "detail": "A full-window illustration of a dhaba at night loads, and a small CRT TV shows static and \"Tandoor garam ho reha…\" while YouTube's player loads. If YouTube can't be reached within 12 seconds, it asks you to refresh."
+    },
+    {
+      "title": "Start the radio",
+      "detail": "Press \"Radio chalao\" and the first station's playlist starts playing, shuffled, inside the TV. The cleaned-up song title shows on the player and in the browser tab."
+    },
+    {
+      "title": "Pick a cassette",
+      "detail": "Three station buttons with Gurmukhi labels (90s Hits, UK Bhangra, 80s & 90s) switch to a different playlist."
+    },
+    {
+      "title": "Control playback",
+      "detail": "Play, pause, skip, shuffle, seek and volume, plus keyboard shortcuts. Songs that can't be embedded are skipped automatically."
+    },
+    {
+      "title": "See what's next",
+      "detail": "The \"Agle gaane\" list shows upcoming songs with thumbnails and titles, and you can tap any one to jump to it."
+    },
+    {
+      "title": "Hear from the dhaba wala",
+      "detail": "When a new song starts, and every 45 seconds while music plays, a one-liner from the dhaba owner pops up, like \"Paaji, ik cup chaa hor?\""
+    }
+  ],
+  "stack": [
+    "React 18",
+    "Vite 5",
+    "YouTube IFrame Player API",
+    "YouTube oEmbed",
+    "Python",
+    "Pillow",
+    "Google Gemini"
+  ],
+  "architectureNote": "It's a static, client-only React app with no backend. One custom hook loads the YouTube IFrame API, mounts a single player inside the on-screen TV and checks it every 500 ms so the up-next list stays correct after shuffling or switching stations. The artwork was made with Gemini around a set of pixel boxes in a JSON file, so the model leaves those spots empty and the code draws the TV and controls on top.",
+  "milestones": [
+    { "label": "First scene-based version", "state": "done", "date": "2026-11-15" },
+    { "label": "Simpler floating-panel layout", "state": "done", "date": "2026-11-15" },
+    { "label": "Up-next queue and real artwork", "state": "done", "date": "2026-11-15" },
+    { "label": "Swap in my own playlists", "state": "doing" },
+    { "label": "Public deploy", "state": "next" },
+    { "label": "Portrait art for phones", "state": "next" }
+  ],
+  "journey": [
+    {
+      "date": "2026-11-15",
+      "kind": "decision",
+      "title": "Decided to make a Punjabi take on a viral idea",
+      "body": "Deluxe Salon Music was all over Instagram, and I wanted to try the same feeling in Punjabi.\n\nA salon didn't fit Punjab, so I set it at a dhaba on the GT Road at night instead."
+    },
+    {
+      "date": "2026-11-15",
+      "kind": "shipped",
+      "title": "Built the first scene-based version",
+      "body": "The first version placed every control on precise spots of the artwork, with separate portrait and landscape scenes, an animated tandoor with fire and smoke, and a signboard drawn in code. The art was still placeholder SVGs."
+    },
+    {
+      "date": "2026-11-15",
+      "kind": "decision",
+      "title": "Simplified to one image with floating panels",
+      "body": "I switched to a single landscape image stretched over the window, with the controls in floating glass panels on top.\n\nThat meant cutting the animated fire and smoke, the code-drawn signboard and the portrait layout, in exchange for something much simpler to keep lined up."
+    },
+    {
+      "date": "2026-11-15",
+      "kind": "shipped",
+      "title": "Added the up-next queue and real artwork",
+      "body": "I added an \"Agle gaane\" list so you can see and jump to upcoming songs, with titles fetched without an API key.\n\nI also replaced the placeholder SVG with real landscape artwork made in Gemini."
+    },
+    {
+      "date": "2026-11-15",
+      "kind": "milestone",
+      "title": "Went from idea to working radio in one day",
+      "body": "Everything above happened in a single day: the idea, two layouts, three stations, the queue, the dhaba wala chatter and the artwork.\n\nWhat's left is swapping the placeholder playlists for my own and putting it online."
+    }
+  ],
+  "roadmap": [
+    "Swap in playlists from my own channel",
+    "Deploy it publicly",
+    "Portrait artwork for phones",
+    "Bring the README up to date"
+  ],
+  "metrics": [
+    { "label": "Time to build", "value": "1 day" },
+    { "label": "Stations", "value": "3" }
+  ]
+}
