@@ -1,0 +1,96 @@
+{
+  "$schema": "../project.schema.json",
+  "slug": "healthos",
+  "name": "HealthOS",
+  "oneLiner": "A health companion that turns scattered lab reports into a timeline of trends in plain words.",
+  "stage": "paused",
+  "category": "Consumer health",
+  "startedOn": "2026-07",
+  "lastUpdated": "2026-07-21",
+  "nextMilestone": "Phone sign-in",
+  "problem": "A lab report is a snapshot, not a story. Each one sits on its own, written in language most people who aren't doctors can't follow, and wearable data lives in yet another silo. A value can stay inside its reference range while it climbs with every test, and nothing points that out.\n\nGen Z in India is health-curious but underserved, and nobody in the Indian market is doing long-term trend detection well at the consumer level. So I'm building HealthOS around the connective tissue between one report and the next, on the bet that showing someone their trajectory in plain language changes what they do.\n\nBecause this is health data, I treat privacy under India's DPDP Act as part of the product, not a compliance step at the end.",
+  "audience": "Health-curious Gen Z in India who get lab tests but can't easily see what the results add up to over time.",
+  "workflow": [
+    {
+      "title": "Sign in with your phone",
+      "detail": "You log in with a phone number and one-time code. The app never stores the raw number, only a keyed hash of it."
+    },
+    {
+      "title": "Give consent per purpose",
+      "detail": "You choose what your data may be used for, such as core processing, AI coaching and notifications. Every grant or withdrawal is recorded with a version and timestamp."
+    },
+    {
+      "title": "Upload a lab report",
+      "detail": "Drop in a PDF or a photo. The original is stored unchanged, and uploading the same file twice is detected and skipped."
+    },
+    {
+      "title": "Claude reads the report",
+      "detail": "A background job pulls out each test result with its unit, reference range and a confidence score. Values the app doesn't recognise are kept for review, and corrections are added as new records so history is never rewritten."
+    },
+    {
+      "title": "See your trends",
+      "detail": "Each metric is labelled rising, falling, stable, volatile or not enough data, and ranked so an in-range value that keeps climbing shows up above a stable borderline one."
+    },
+    {
+      "title": "Ask the coach",
+      "detail": "A chat coach explains your trends in plain language. Every reply passes a safety check that can block it, point you to a doctor or flag an emergency."
+    }
+  ],
+  "stack": [
+    "Python 3.12",
+    "FastAPI",
+    "SQLAlchemy",
+    "Alembic",
+    "PostgreSQL",
+    "Pydantic",
+    "structlog",
+    "Claude API",
+    "Clerk",
+    "S3 / MinIO",
+    "Docker Compose",
+    "GitHub Actions",
+    "uv"
+  ],
+  "architectureNote": "It's a single FastAPI service over Postgres, with data in three tiers: original uploads that are never changed, parsed values that can only be added to, and trends and coaching messages that are a cache rebuilt from the first two. The add-only rule is enforced by a database trigger, not just by the app. Background work runs through a job queue inside Postgres instead of Kafka, and every log line is scrubbed for personal data, with CI failing the build if any leaks into test output.",
+  "milestones": [
+    { "label": "Product plan and build spec", "state": "done", "date": "2026-07-21" },
+    { "label": "Backend foundation and schema", "state": "done", "date": "2026-07-21" },
+    { "label": "Phone sign-in", "state": "doing" },
+    { "label": "Lab report upload and parsing", "state": "next" },
+    { "label": "Trend detection", "state": "next" },
+    { "label": "Plain-language coaching", "state": "next" }
+  ],
+  "journey": [
+    {
+      "date": "2026-07-21",
+      "kind": "decision",
+      "title": "Wrote the product plan and build spec",
+      "body": "I wrote two documents: a product plan built around trend detection across health reports with AI coaching, and a step-by-step build spec split into seven phases.\n\nThe core hypothesis is that showing someone their trajectory, in plain language, changes what they do."
+    },
+    {
+      "date": "2026-07-21",
+      "kind": "decision",
+      "title": "Cut the MVP stack down",
+      "body": "The original plan had Kafka, Redis, TimescaleDB, a vector store and LangGraph. For the MVP I dropped all of them in favour of Postgres and a plain Python coaching pipeline, with a job queue that lives in the database.\n\nEach simplification has a written upgrade path, so I can add the heavier pieces when they're actually needed."
+    },
+    {
+      "date": "2026-07-21",
+      "kind": "decision",
+      "title": "Made privacy a product feature",
+      "body": "Health data under India's DPDP Act shaped the design from the start. Production refuses to start if storage is outside an approved Indian region, if the database connection isn't encrypted or if a secret is missing.\n\nRaw phone numbers are never stored, and the access log is kept separate from user records so it survives a user's deletion for audits."
+    },
+    {
+      "date": "2026-07-21",
+      "kind": "shipped",
+      "title": "Committed the Phase 0 backend foundation",
+      "body": "The first commit set up the FastAPI service, the full database schema for users, consents, reports, observations, trends, coaching, jobs and audit logs, and a database trigger that blocks deleting or rewriting stored values.\n\nIt also added logging that strips personal data, a health-check endpoint, tests, CI and a local setup with Postgres and MinIO. Sign-in and the web app are the parts of Phase 0 still to build."
+    }
+  ],
+  "roadmap": [
+    "Phone sign-in and the web app",
+    "Lab report upload and parsing with Claude",
+    "Trend engine across reports",
+    "Coaching chat with safety checks",
+    "Hosting in an Indian region"
+  ]
+}
